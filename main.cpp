@@ -45,5 +45,18 @@ int main()
 
     printf("Using OpenGL: %d.%d\n", glVersion[0], glVersion[1]);
 
+    // Now we start to create The Game Loop.
+    glClearColor(1.0, 0.0, 0.0, 1.0);
+    while(!glfwWindowShouldClose(window))
+    {
+        glClear(GL_COLOR_BUFFER_BIT);
+        // Used to swap buffers.
+        glfwSwapBuffers(window);
+        // The following is used to process any remaining events.
+        glfwPollEvents();
+    }
+    glfwDestroyWindow(window);
+    glfwTerminate();
+
 }
 
